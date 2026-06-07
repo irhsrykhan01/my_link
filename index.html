@@ -1,103 +1,508 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Links</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"><style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+
+<title>@dnzkyy0 | My Links</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+:root{
+--bg1:#020617;
+--bg2:#0f172a;
+--bg3:#1e293b;
+--glass:rgba(255,255,255,.06);
+--border:rgba(255,255,255,.09);
+--text:#ffffff;
+--cyan:#38bdf8;
+}
 
 body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#000,#020617,#0f172a);
-  color:#fff;
-  overflow:hidden;
+background:
+linear-gradient(
+135deg,
+var(--bg1),
+var(--bg2),
+var(--bg3)
+);
+color:var(--text);
+min-height:100vh;
+overflow-x:hidden;
+padding:25px 15px;
+display:flex;
+justify-content:center;
 }
 
-/* CONTAINER (NORMAL SIZE) */
-.container{
-  width:100%;
-  max-width:300px;
-  padding:14px;
-  text-align:center;
-}
+/* ========================= */
+/* PARTICLES */
+/* ========================= */
 
-.profile img{
-  width:75px;height:75px;border-radius:50%;
-  border:2px solid rgba(255,255,255,0.6);
-  object-fit:cover;margin-bottom:8px;
-}
-
-.profile h1{font-size:18px;font-weight:700}
-.profile p{font-size:12px;opacity:0.7}
-
-.links{margin-top:18px}
-
-/* TOMBOL SATU WARNA */
-.links a{
-  display:block;
-  text-decoration:none;
-  padding:12px;
-  margin:8px 0;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:600;
-  color:#fff;
-  background:#1e293b;
-  transition:0.2s;
-}
-
-.links a:hover{
-  background:#334155;
-  transform:scale(1.03);
-}
-
-.footer{margin-top:14px;font-size:10px;opacity:0.6}
-
-/* PARTICLES CEPAT RANDOM */
 .particle{
-  position:absolute;
-  background:white;
-  border-radius:50%;
-  opacity:0.4;
-  animation:move linear infinite;
+position:fixed;
+background:white;
+border-radius:50%;
+opacity:.25;
+pointer-events:none;
+animation:float linear infinite;
 }
 
-@keyframes move{
-  from{transform:translateY(100vh)}
-  to{transform:translateY(-10vh)}
+@keyframes float{
+from{
+transform:translateY(110vh);
+}
+to{
+transform:translateY(-10vh);
+}
 }
 
-</style></head>
-<body><!-- PARTICLES AUTO --><script>
-for(let i=0;i<50;i++){
-  let p=document.createElement('div');
-  p.className='particle';
+/* ========================= */
+/* MAIN */
+/* ========================= */
 
-  let size=Math.random()*6+2;
-  p.style.width=size+'px';
-  p.style.height=size+'px';
-
-  p.style.left=Math.random()*100+'vw';
-
-  let duration=Math.random()*2+1.5;
-  p.style.animationDuration=duration+'s';
-
-  p.style.opacity=Math.random();
-
-  document.body.appendChild(p);
+.container{
+width:100%;
+max-width:390px;
+animation:fadeUp .8s ease;
 }
-</script><div class="container"><div class="profile">
-<img src="avatar.jpg">
-<h1>CHANNEL LINK 🔗</h1>
-<p>Creator • Sticker</p>
-</div><div class="links">
-<a href="https://whatsapp.com/channel/0029Vb7w6nH4tRs11s8rUK2A" target="_blank">Saluran Stiker Tiktok 🫪</a>
-<a href="https://whatsapp.com/channel/0029VbC7VcpDuMRjXRCl9r1V" target="_blank">Saluran Story Sad-mu!</a>
-<a href="https://tiktok.com/@dnzkyy0" target="_blank">Akun Tiktok</a>
-<a href="https://saweria.co/irhsrykhn" target="_blank">DONATE 💸</a>
-<p>@2026</p>
-</div><div class="footer">Thanks for visiting 👀</div></div></body>
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ========================= */
+/* PROFILE */
+/* ========================= */
+
+.profile{
+text-align:center;
+margin-bottom:18px;
+}
+
+.avatar{
+width:100px;
+height:100px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 0 20px rgba(56,189,248,.25),
+0 0 50px rgba(56,189,248,.18);
+
+animation:pulse 4s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.03);
+}
+100%{
+transform:scale(1);
+}
+}
+
+.username{
+font-size:23px;
+font-weight:800;
+margin-top:14px;
+}
+
+.bio{
+font-size:12px;
+opacity:.75;
+margin-top:5px;
+letter-spacing:1px;
+}
+
+/* ========================= */
+/* GLASS CARD */
+/* ========================= */
+
+.card{
+background:var(--glass);
+backdrop-filter:blur(12px);
+border:1px solid var(--border);
+border-radius:20px;
+padding:16px;
+margin-bottom:15px;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+background:linear-gradient(
+90deg,
+transparent,
+var(--cyan),
+transparent
+);
+}
+
+/* ========================= */
+/* TYPING */
+/* ========================= */
+
+.typing{
+font-size:14px;
+font-weight:700;
+text-align:center;
+min-height:22px;
+}
+
+/* ========================= */
+/* TUTORIAL */
+/* ========================= */
+
+.title{
+font-size:14px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.tutorial-img{
+width:100%;
+border-radius:14px;
+margin-bottom:12px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.tutorial{
+font-size:12px;
+line-height:1.8;
+opacity:.9;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+
+.link-btn{
+display:block;
+text-decoration:none;
+color:white;
+
+background:rgba(255,255,255,.07);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+padding:15px;
+margin-bottom:12px;
+
+border-radius:16px;
+
+font-size:13px;
+font-weight:700;
+
+transition:.25s;
+
+position:relative;
+overflow:hidden;
+}
+
+.link-btn:hover{
+transform:translateY(-3px);
+background:rgba(255,255,255,.11);
+}
+
+.link-btn::before{
+content:"";
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:60%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.18),
+transparent
+);
+
+transition:.7s;
+}
+
+.link-btn:hover::before{
+left:140%;
+}
+
+/* DONATE */
+
+.donate{
+border:1px solid rgba(56,189,248,.25);
+
+box-shadow:
+0 0 15px rgba(56,189,248,.08);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+text-align:center;
+font-size:12px;
+opacity:.8;
+line-height:1.8;
+margin-top:20px;
+}
+
+.footer span{
+display:block;
+margin-top:5px;
+font-size:11px;
+opacity:.7;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<35;i++){
+const p=document.createElement("div");
+
+p.className="particle";
+
+let size=Math.random()*4+2;
+
+p.style.width=size+"px";
+p.style.height=size+"px";
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.animationDuration=
+(Math.random()*8+6)+"s";
+
+document.body.appendChild(p);
+}
+</script>
+
+<div class="container">
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+<img
+src="avatar.jpg"
+alt="Avatar"
+class="avatar">
+
+<div class="username">
+@dnzkyy0
+</div>
+
+<div class="bio">
+CREATOR • CHANNEL WHATSAPP
+</div>
+
+</div>
+
+<!-- TYPING CARD -->
+
+<div class="card">
+
+<div
+class="typing"
+id="typing">
+</div>
+
+</div>
+
+<!-- TUTORIAL -->
+
+<div class="card">
+
+<div class="title">
+📖 CARA JOIN!
+</div>
+
+<img
+src="tutorial.jpg"
+class="tutorial-img"
+alt="Tutorial">
+
+<div class="tutorial">
+
+① Klik salah satu tombol saluran di bawah.<br>
+
+② Tekan tombol
+<b>Ikuti</b>.<br>
+
+③ Aktifkan notifikasi 🔔.<br>
+
+④ Selesai! 🎉
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
+<a
+class="link-btn"
+href="https://whatsapp.com/channel/0029Vb7w6nH4tRs11s8rUK2A"
+target="_blank">
+
+🫪 Saluran Sticker Tiktok
+
+</a>
+
+<a
+class="link-btn"
+href="https://whatsapp.com/channel/0029VbC7VcpDuMRjXRCl9r1V"
+target="_blank">
+
+📖 Saluran Story Sad-mu!
+
+</a>
+
+<a
+class="link-btn"
+href="https://tiktok.com/@dnzkyy0"
+target="_blank">
+
+🎵 Akun TikTok!
+
+</a>
+
+<a
+class="link-btn donate"
+href="https://saweria.co/irhsrykhn"
+target="_blank">
+
+💸 Donate
+
+</a>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+🔥 Terimakasih Sudah Follow Saluran Ku!
+
+<span>
+Support terus agar semakin berkembang 🚀
+</span>
+
+</div>
+
+</div>
+
+<!-- TYPING EFFECT -->
+
+<script>
+
+const texts=[
+"✨ Welcome To My Links",
+"📢 Jangan Lupa Follow",
+"🔥 Update Setiap Hari",
+"💙 Terima Kasih Sudah Support"
+];
+
+let textIndex=0;
+let charIndex=0;
+
+const typing=
+document.getElementById("typing");
+
+function typeText(){
+
+const current=
+texts[textIndex];
+
+typing.textContent=
+current.substring(
+0,
+charIndex++
+);
+
+if(charIndex<=current.length){
+
+setTimeout(
+typeText,
+80
+);
+
+}else{
+
+setTimeout(
+eraseText,
+1800
+);
+
+}
+
+}
+
+function eraseText(){
+
+const current=
+texts[textIndex];
+
+typing.textContent=
+current.substring(
+0,
+charIndex--
+);
+
+if(charIndex>=0){
+
+setTimeout(
+eraseText,
+40
+);
+
+}else{
+
+textIndex=
+(textIndex+1)
+%
+texts.length;
+
+setTimeout(
+typeText,
+300
+);
+
+}
+
+}
+
+typeText();
+
+</script>
+
+</body>
 </html>
