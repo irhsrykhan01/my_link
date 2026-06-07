@@ -178,23 +178,30 @@ min-height:22px;
 /* TUTORIAL */
 /* ========================= */
 
-.title{
+.tutorial-dropdown summary{
+cursor:pointer;
+list-style:none;
 font-size:14px;
 font-weight:700;
-margin-bottom:12px;
 }
 
-.tutorial-img{
-width:100%;
-border-radius:14px;
-margin-bottom:12px;
-border:1px solid rgba(255,255,255,.08);
+.tutorial-dropdown summary::-webkit-details-marker{
+display:none;
 }
 
-.tutorial{
-font-size:12px;
-line-height:1.8;
-opacity:.9;
+.tutorial-dropdown summary::after{
+content:"▼";
+float:right;
+transition:.3s;
+}
+
+.tutorial-dropdown[open] summary::after{
+transform:rotate(180deg);
+}
+
+.tutorial-dropdown img,
+.tutorial-dropdown .tutorial{
+margin-top:12px;
 }
 
 /* ========================= */
@@ -342,11 +349,11 @@ id="typing">
 
 <!-- TUTORIAL -->
 
-<div class="card">
+<details class="card tutorial-dropdown">
 
-<div class="title">
-📖 CARA JOIN!
-</div>
+<summary>
+📖 CARA MASUK KE SALURAN
+</summary>
 
 <img
 src="tutorial.jpg"
@@ -355,7 +362,7 @@ alt="Tutorial">
 
 <div class="tutorial">
 
-📌 Klik titik tiga di pojok kanan atas.<br>
+📌 Klik ikon <b>⋮ (titik tiga)</b> di pojok kanan atas.<br>
 
 🌐 Pilih <b>"Buka di Browser"</b>.<br>
 
@@ -363,7 +370,7 @@ alt="Tutorial">
 
 </div>
 
-</div>
+</details>
 
 <!-- BUTTONS -->
 
