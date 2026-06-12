@@ -300,7 +300,7 @@ opacity:.7;
 }
 </style>
 </head>
-
+<script>
 <body>
 
 <script>
@@ -358,10 +358,12 @@ id="typing">
 <!-- TUTORIAL -->
 
 <details class="card tutorial-dropdown">
+<div class="card" id="tutorial-card">
 
-<summary>
-📖 TUTORIAL UNTUK YANG BUKA DARI BIO TIKTOK!
-</summary>
+<div class="title">
+Buka dari bio TikTok?
+liat tutorial nya!
+</div>
 
 <img
 src="tutorial.jpg"
@@ -370,15 +372,15 @@ alt="Tutorial">
 
 <div class="tutorial">
 
-📌 Klik ikon <b>⋮ (titik tiga)</b> di pojok kanan atas.<br>
+📌 Klik ikon ⋮ (titik tiga) di pojok kanan atas.<br>
 
 🌐 Pilih <b>"Buka di Browser"</b>.<br>
 
-📢 Lalu silakan masuk ke saluran yang kamu inginkan! 🔥
+📢 Setelah terbuka di browser, silakan masuk ke saluran yang kamu inginkan! 🔥
 
 </div>
 
-</details>
+</div>
 
 <!-- BUTTONS -->
 
@@ -513,6 +515,25 @@ typeText,
 }
 
 typeText();
+
+const ua =
+navigator.userAgent.toLowerCase();
+
+const isTikTok =
+ua.includes("tiktok");
+
+if(!isTikTok){
+
+const tutorial =
+document.getElementById(
+"tutorial-card"
+);
+
+if(tutorial){
+tutorial.style.display="none";
+}
+
+}
 
 </script>
 
