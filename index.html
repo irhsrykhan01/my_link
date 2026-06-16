@@ -1,70 +1,430 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DNZKYY Official</title>
+
+<title>dnzkyy0</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    margin:0;
-    padding:20px;
-    text-align:center;
+background:#09090b;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-.box{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
+/* GARIS DEKORASI */
+
+.line{
+position:fixed;
+background:rgba(255,255,255,.08);
+z-index:0;
 }
 
-h1{
-    margin-bottom:10px;
+.top-left{
+top:40px;
+left:30px;
+width:140px;
+height:2px;
 }
 
-p{
-    color:#555;
+.top-left::after{
+content:"";
+position:absolute;
+width:2px;
+height:140px;
+background:rgba(255,255,255,.08);
+left:0;
+top:0;
 }
 
-a{
-    display:block;
-    text-decoration:none;
-    background:#25D366;
-    color:white;
-    padding:12px;
-    margin:10px 0;
-    border-radius:10px;
-    font-weight:bold;
+.top-right{
+top:40px;
+right:30px;
+width:140px;
+height:2px;
 }
 
-.tiktok{
-    background:#000;
+.top-right::after{
+content:"";
+position:absolute;
+width:2px;
+height:140px;
+background:rgba(255,255,255,.08);
+right:0;
+top:0;
 }
+
+.bottom-left{
+bottom:40px;
+left:30px;
+width:140px;
+height:2px;
+}
+
+.bottom-left::after{
+content:"";
+position:absolute;
+width:2px;
+height:140px;
+background:rgba(255,255,255,.08);
+left:0;
+bottom:0;
+}
+
+.bottom-right{
+bottom:40px;
+right:30px;
+width:140px;
+height:2px;
+}
+
+.bottom-right::after{
+content:"";
+position:absolute;
+width:2px;
+height:140px;
+background:rgba(255,255,255,.08);
+right:0;
+bottom:0;
+}
+
+.container{
+position:relative;
+z-index:2;
+
+width:100%;
+max-width:430px;
+
+margin:auto;
+
+padding:30px 20px;
+}
+
+.profile{
+text-align:center;
+}
+
+.avatar{
+width:95px;
+height:95px;
+
+border-radius:50%;
+object-fit:cover;
+
+border:3px solid rgba(255,255,255,.15);
+}
+
+.username{
+font-size:24px;
+font-weight:800;
+margin-top:12px;
+}
+
+.bio{
+font-size:12px;
+opacity:.7;
+margin-top:4px;
+letter-spacing:1px;
+}
+
+.typing{
+margin-top:18px;
+
+font-size:14px;
+font-weight:600;
+
+min-height:22px;
+
+opacity:.95;
+}
+
+/* CARD */
+
+.card{
+margin-top:20px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:15px;
+
+backdrop-filter:blur(10px);
+}
+.tutorial-dropdown summary{
+cursor:pointer;
+list-style:none;
+font-weight:700;
+font-size:14px;
+}
+
+.tutorial-dropdown summary::-webkit-details-marker{
+display:none;
+}
+
+.tutorial-dropdown summary::after{
+content:"+";
+float:right;
+font-size:18px;
+transition:.3s;
+}
+
+.tutorial-dropdown[open] summary::after{
+transform:rotate(45deg);
+}
+
+.tutorial-img{
+width:100%;
+border-radius:14px;
+margin-top:12px;
+margin-bottom:12px;
+}
+
+.tutorial{
+font-size:12px;
+line-height:1.8;
+opacity:.8;
+}
+
+/* BUTTON */
+
+.link-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+
+width:100%;
+
+padding:16px;
+
+margin-top:12px;
+
+border-radius:16px;
+
+text-decoration:none;
+color:white;
+
+font-weight:700;
+font-size:14px;
+
+background:#111827;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.25s;
+}
+
+.link-btn:hover{
+transform:translateY(-3px);
+background:#18181b;
+}
+
+.link-btn:active{
+transform:scale(.97);
+}
+
+.donate{
+background:linear-gradient(
+135deg,
+#1d4ed8,
+#2563eb
+);
+
+border:none;
+}
+
+.footer{
+text-align:center;
+margin-top:25px;
+
+font-size:12px;
+opacity:.7;
+}
+
 </style>
 </head>
+
 <body>
 
-<div class="box">
-    <h1>DNZKYY</h1>
+<div class="line top-left"></div>
+<div class="line top-right"></div>
+<div class="line bottom-left"></div>
+<div class="line bottom-right"></div>
 
-    <a href="https://whatsapp.com/channel/0029VbD1zBtCXC3L9cAyIJ0X" target="_blank">
-        🫪 Saluran Sticker Plenger
-    </a>
+<div class="container">
 
-    <a href="https://whatsapp.com/channel/0029VbC7VcpDuMRjXRCl9r1V" target="_blank">
-        💔 Saluran Story Sad-mu!
-    </a>
+<!-- PROFILE -->
 
-    <a class="tiktok" href="https://tiktok.com/@dnzkyy0" target="_blank">
-        🎵 Akun TikTok
-    </a>
+<div class="profile">
+
+<img
+src="avatar.jpg"
+class="avatar"
+alt="Avatar">
+
+<div class="username">
+@dnzkyy0
+</div>
+
+<div class="bio">
+CREATOR • CHANNEL WHATSAPP
+</div>
+
+<div
+class="typing"
+id="typing">
+</div>
 
 </div>
+
+<!-- TUTORIAL -->
+
+<details class="card tutorial-dropdown">
+
+<summary>
+📱 Buka dari Bio TikTok?
+Lihat tutorialnya
+</summary>
+
+<img
+src="tutorial.jpg"
+class="tutorial-img"
+alt="Tutorial">
+
+<div class="tutorial">
+
+📌 Klik titik tiga di pojok kanan atas.<br>
+
+🌐 Pilih <b>Buka di Browser</b>.<br>
+
+🚀 Setelah terbuka, silakan masuk ke saluran yang kamu inginkan.
+
+</div>
+
+</details>
+
+<!-- BUTTONS -->
+
+<a
+href="https://whatsapp.com/channel/ISI_LINK_1"
+target="_blank"
+class="link-btn">
+
+🫪 Saluran Sticker TikTok
+
+</a>
+
+<a
+href="https://whatsapp.com/channel/ISI_LINK_2"
+target="_blank"
+class="link-btn">
+
+📖 Saluran Story Sad-mu!
+
+</a>
+
+<a
+href="https://tiktok.com/@dnzkyy0"
+target="_blank"
+class="link-btn">
+
+🎵 Akun TikTok
+
+</a>
+
+<a
+href="https://saweria.co/USERNAME"
+target="_blank"
+class="link-btn donate">
+
+💸 Donate
+
+</a>
+
+<div class="footer">
+
+🔥 Terimakasih sudah Follow saluran ku!
+
+</div>
+
+</div>
+
+<script>
+
+const texts=[
+"✨ Welcome To My Links",
+"📢 Jangan lupa follow saluran",
+"🔥 Update setiap hari",
+"💙 Terima kasih atas supportnya"
+];
+
+let textIndex=0;
+let charIndex=0;
+
+const typing=
+document.getElementById("typing");
+
+function typeText(){
+
+const current=
+texts[textIndex];
+
+typing.textContent=
+current.substring(0,charIndex++);
+
+if(charIndex<=current.length){
+
+setTimeout(typeText,80);
+
+}else{
+
+setTimeout(eraseText,1800);
+
+}
+
+}
+
+function eraseText(){
+
+const current=
+texts[textIndex];
+
+typing.textContent=
+current.substring(0,charIndex--);
+
+if(charIndex>=0){
+
+setTimeout(eraseText,40);
+
+}else{
+
+textIndex=
+(textIndex+1)%texts.length;
+
+setTimeout(typeText,300);
+
+}
+
+}
+
+typeText();
+
+</script>
 
 </body>
 </html>
